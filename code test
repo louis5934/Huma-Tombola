@@ -1,0 +1,39 @@
+import os
+os.chdir(r"C:\Users\kimvy\Documents\Huma_CS\JDS")
+
+import pandas as pd
+
+def load_participants_cs():
+    # Charger le fichier Excel
+    df = pd.read_excel("Tombola.xlsx", sheet_name="Participants")
+    # Ne garder que les lignes où la 5ème colonne vaut True 
+    df = df[df.iloc[:, 4] == True]
+    # Créer une colonne Prénom Nom
+    df["Prénom Nom"] = df.iloc[:, 1].astype(str) + " " + df.iloc[:, 0].astype(str)
+    # Transformer en dictionnaire en utilisant la colonne Prénom Nom comme clé
+    participants_cs_dico = df.set_index("Prénom Nom")["Nombre de tickets"].to_dict()
+
+    return participants_cs_dico
+
+
+def load_participants_exte():
+    # Charger le fichier Excel
+    df = pd.read_excel("Tombola.xlsx", sheet_name="Participants")
+    # Ne garder que les lignes où la 5ème colonne vaut False 
+    df = df[df.iloc[:, 4] == False] 
+    # Créer une colonne Prénom Nom
+    df["Prénom Nom"] = df.iloc[:, 1].astype(str) + " " + df.iloc[:, 0].astype(str)
+    # Transformer en dictionnaire en utilisant la colonne Prénom Nom comme clé
+    participants_exte_dico = df.set_index("Prénom Nom")["Nombre de tickets"].to_dict()
+
+    return participants_exte_dico
+
+
+def load_lots():
+    # Charger le fichier Excel
+    df = pd.read_excel("Tombola.xlsx", sheet_name="Lots")
+
+    # Transformer en liste
+    lots = df["Lots"].tolist()
+
+    return lots

@@ -31,7 +31,7 @@ def load_participants_exte():
 
 def load_lots():
     # Charger le fichier Excel
-    df = pd.read_excel("Tombola.xlsx", sheet_name="Lots")
+    df = pd.read_excel("Copie de Tombola.xlsx", sheet_name="Lots")
 
     # Transformer en liste
     lots = df["Lots"].tolist()

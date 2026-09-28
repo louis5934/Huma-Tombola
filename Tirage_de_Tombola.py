@@ -6,10 +6,10 @@ Created on Thu Oct  2 10:51:57 2025
 """
 
 import random
-import tirage_tombola2
+import code_test
 
 # participants_exte = {nom : nb_ticket}
-participants_cs = tirage_tombola2.load_participants_cs()
+participants_cs = code_test.load_participants_cs()
 participants_exte = {}
 lots = ['PS5', 'Casque Sony', 'enceinte JBL', "ticket d'or wei", "ticket d'or wei", 'appareils à raclette', 'appareils à raclette', 'bouteille de vin', 'bouteille de vin', 'bouteille de vin', 'place au TOSS', 'place Grape', 'place Grape', 'date bistrot', 'date bistrot', 'menu M', 'menu M', 'menu M', 'menu M', 'menu M', 'place commus', 'place commus', 'place commus', 'place commus', 'place commus', 'culottes menstruelles', 'culottes menstruelles', '1 cup', 'livre', 'livre', 'livre', 'livre', 'livre', 'livre', 'livre', 'livre', 'livre', 'livre']
 lots_cs = []
